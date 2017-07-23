@@ -10,12 +10,12 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: ${PYTHON} setup.py install
   entry_points:
     - conda-verify = conda_verify.cli:cli
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
