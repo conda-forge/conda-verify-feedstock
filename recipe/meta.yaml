@@ -1,22 +1,19 @@
-{% set version = "3.0.2" %}
+{% set git_rev="90e3ac17818aac73a93976c6947bba8cf897690d" %}
 
 package:
   name: conda-verify
-  version: {{ version }}
+  version: {{ GIT_DESCRIBE_TAG }}
 
 source:
-  url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
-  sha256: 778d423327725320ec3d19e8854f6e1d803d127c5710542c48b9f1f8e1bb31ce
-
-build:
-  number: 0
-  script: python setup.py install
-  entry_points:
-    - conda-verify = conda_verify.cli:cli
+  git_url: https://github.com/conda/conda-verify
+  # use git rev to point to unique id that doesn't change when github changes git version
+  #    This corresponds to the 3.0.0 tag.
+  git_rev: {{ git_rev }}
 
 requirements:
-  host:
+  build:
     - python
+    - setuptools
     - pip
   run:
     - python
@@ -24,7 +21,9 @@ requirements:
     - click
     - pyyaml
     - backports.functools_lru_cache  # [py<33]
-    - future
+
+build:
+  script: pip install . --no-deps
 
 test:
   imports:
@@ -41,7 +40,6 @@ about:
   description: |
     conda-verify is a tool for (passively) verifying conda recipes and conda
     packages.
-  dev_url: https://github.com/conda/conda-verify
 
 extra:
   recipe-maintainers:
