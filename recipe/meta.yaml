@@ -12,7 +12,7 @@ build:
   number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
-    - conda-verify = conda_verify.main:main
+    - conda-verify = conda_verify.cli:cli
 
 requirements:
   build:
@@ -28,7 +28,6 @@ requirements:
 test:
   imports:
     - conda_verify
-
   commands:
     - conda-verify --version
     - conda-verify --help
