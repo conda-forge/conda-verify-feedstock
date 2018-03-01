@@ -1,35 +1,36 @@
-{% set name = "conda-verify" %}
 {% set version = "3.0.1" %}
-{% set checksum = "f3afe0b84f68332479d66e37c913b82344154b2f716185027f965ecf2a66eb4e" %}
 
 package:
-  name: {{ name }}
+  name: conda-verify
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
-  sha256: {{ checksum }}
+  sha256: f3afe0b84f68332479d66e37c913b82344154b2f716185027f965ecf2a66eb4e
 
 build:
   number: 0
-  script: python setup.py install
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - conda-verify = conda_verify.main:main
 
 requirements:
   build:
     - python
-
+    - pip
   run:
     - python
+    - jinja2
+    - click
     - pyyaml
+    - backports.functools_lru_cache  # [py<33]
 
 test:
   imports:
     - conda_verify
 
   commands:
+    - conda-verify --version
     - conda-verify --help
 
 about:
@@ -48,3 +49,4 @@ extra:
     - patricksnape
     - pelson
     - scopatz
+    - mandeep
