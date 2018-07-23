@@ -1,4 +1,4 @@
-{% set git_rev="90e3ac17818aac73a93976c6947bba8cf897690d" %}
+{% set git_rev="3.0.2" %}
 
 package:
   name: conda-verify
