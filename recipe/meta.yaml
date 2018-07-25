@@ -1,14 +1,16 @@
-{% set git_rev="b43ea6ff45b8b6d9cf29a3b20978417407795cff" %}  {# 3.1.0 #}
+{% set version = "3.1.0" %}
 
 package:
   name: conda-verify
-  version: {{ GIT_DESCRIBE_TAG }}
+  version: {{ version }}
 
 source:
-  git_url: https://github.com/conda/conda-verify
-  # use git rev to point to unique id that doesn't change when github changes git version
-  #    This corresponds to the 3.0.0 tag.
-  git_rev: {{ git_rev }}
+  fn: conda-verify-{{ version }}.tar.gz
+  url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
+  sha256: ab31744ed99a5f5e5df8a2619bae43638770c19e94238f92d69cc377012e028e
+
+build:
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
@@ -25,9 +27,6 @@ requirements:
     - six
   run_constrained:
     - conda-build  >=3.12.0
-
-build:
-  script: pip install . --no-deps
 
 test:
   imports:
