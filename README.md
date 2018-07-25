@@ -14,14 +14,16 @@ Summary: tool for validating conda recipes and conda packages
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/conda-verify-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/conda-verify-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/conda-verify-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/conda-verify-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/conda-verify-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/conda-verify-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/conda-verify-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/conda-verify-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/conda-verify-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/conda-verify-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/conda-verify-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/conda-verify-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/conda-verify/badges/version.svg)](https://anaconda.org/conda-forge/conda-verify)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/conda-verify/badges/downloads.svg)](https://anaconda.org/conda-forge/conda-verify)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-conda--verify-green.svg)](https://anaconda.org/conda-forge/conda-verify) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/conda-verify.svg)](https://anaconda.org/conda-forge/conda-verify) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/conda-verify.svg)](https://anaconda.org/conda-forge/conda-verify) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/conda-verify.svg)](https://anaconda.org/conda-forge/conda-verify) |
 
 Installing conda-verify
 =======================
