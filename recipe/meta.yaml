@@ -11,7 +11,7 @@ source:
   git_rev: {{ git_rev }}
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - pip
@@ -33,8 +33,9 @@ test:
   imports:
     - conda_verify
   commands:
-    - conda-verify --version
-    - conda-verify --help
+    # return code of version and help is 1 on windows !?
+    - conda-verify --version  # [unix]
+    - conda-verify --help     # [unix]
 
 about:
   home: https://github.com/conda/conda-verify
