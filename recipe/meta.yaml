@@ -1,4 +1,4 @@
-{% set git_rev="bdb3e6bf43174e08244f4323392297a5c87df0a1" %} {# 3.0.2 #}
+{% set git_rev="b43ea6ff45b8b6d9cf29a3b20978417407795cff" %}  {# 3.1.0 #}
 
 package:
   name: conda-verify
@@ -22,6 +22,9 @@ requirements:
     - pyyaml
     - future
     - backports.functools_lru_cache  # [py<33]
+    - six
+  run_constrained:
+    - conda-build  >=3.12.0
 
 build:
   script: pip install . --no-deps
