@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
@@ -26,8 +26,6 @@ requirements:
     - future
     - backports.functools_lru_cache  # [py<33]
     - six
-  run_constrained:
-    - conda-build  >=3.12.0
 
 test:
   imports:
