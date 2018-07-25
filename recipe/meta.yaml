@@ -1,4 +1,4 @@
-{% set version = "3.0.2" %}
+{% set version = "3.1.0" %}
 
 package:
   name: conda-verify
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
-  sha256: 778d423327725320ec3d19e8854f6e1d803d127c5710542c48b9f1f8e1bb31ce
+  sha256: ab31744ed99a5f5e5df8a2619bae43638770c19e94238f92d69cc377012e028e
 
 build:
   number: 0
