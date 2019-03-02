@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
-  sha256: 2697f5525f0b33b5e6fb288db0f6e72a4b895492ee344e8795c6de7f64dbd2a0
+  sha256: 465ff6d1c539e6d88a26b7564d2031739b98a5a0c8b50384724dcb707581f865
 
 build:
   number: 1000
