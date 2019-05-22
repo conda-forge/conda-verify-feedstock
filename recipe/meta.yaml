@@ -1,17 +1,17 @@
-{% set version = "3.1.1" %}
+{% set version = "3.3.0" %}
 
 package:
   name: conda-verify
   version: {{ version }}
 
 source:
-  fn: conda-verify-{{ version }}.tar.gz
-  url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
-  sha256: 2697f5525f0b33b5e6fb288db0f6e72a4b895492ee344e8795c6de7f64dbd2a0
+  url: https://github.com/conda/conda-verify/releases/download/{{ version }}/conda-verify-{{ version }}.tar.gz
+  sha256: 4aea8d873087f9cb7f68d45e7ef4f0dbd7c843148c28c22f28a0f47ea312ee2e
 
 build:
   number: 0
-  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: True  # [py27]
 
 requirements:
   host:
