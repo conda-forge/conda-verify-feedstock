@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - jinja2
@@ -25,6 +25,8 @@ requirements:
     - future
     - backports.functools_lru_cache  # [py<33]
     - six
+    - tqdm
+    - conda-package-handling >=1.1
 
 test:
   imports:
