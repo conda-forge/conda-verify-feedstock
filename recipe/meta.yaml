@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
+  url: https://github.com/conda/conda-verify/releases/download/{{ version }}/conda-verify-{{ version }}.tar.gz
   sha256: 371204dd2e1472e6370a8b920fffea506202d6187bd74746faedd83c2854024c
 
 build:
