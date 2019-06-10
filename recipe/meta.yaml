@@ -1,4 +1,4 @@
-{% set version = "3.1.1" %}
+{% set version = "3.4.0" %}
 
 package:
   name: conda-verify
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
-  sha256: 465ff6d1c539e6d88a26b7564d2031739b98a5a0c8b50384724dcb707581f865
+  sha256: 192ba175f7070a80eed852ea6623d6750e905800998ec7162ffa1c0d7877e346
 
 build:
-  number: 1000
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - conda-verify = conda_verify.cli:cli
