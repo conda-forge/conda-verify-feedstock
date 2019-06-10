@@ -26,6 +26,7 @@ requirements:
     - pyyaml
     - backports.functools_lru_cache  # [py<33]
     - future
+    - tqdm
 
 test:
   imports:
