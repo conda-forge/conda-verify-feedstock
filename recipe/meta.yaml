@@ -1,21 +1,23 @@
-{% set version = "3.3.0" %}
+{% set version = "3.4.2" %}
 
 package:
   name: conda-verify
   version: {{ version }}
 
 source:
-  url: https://github.com/conda/conda-verify/releases/download/{{ version }}/conda-verify-{{ version }}.tar.gz
-  sha256: 4aea8d873087f9cb7f68d45e7ef4f0dbd7c843148c28c22f28a0f47ea312ee2e
+  fn: conda-verify-{{ version }}.tar.gz
+  url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz
+  sha256: 0fc0af337ffcdfcb88b61e5411c9b7e56448fc6701522b4119bdbd65063311ae
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [py27]
+  script: {{ PYTHON }} -m pip install . --no-deps
+  noarch: python
 
 requirements:
-  host:
+  build:
     - python
+    - setuptools
     - pip
   run:
     - python
@@ -24,9 +26,10 @@ requirements:
     - pyyaml
     - future
     - backports.functools_lru_cache  # [py<33]
+    - backports.tempfile
+    - conda-package-handling >=1.0.4
     - six
     - tqdm
-    - conda-package-handling >=1.1
 
 test:
   imports:
