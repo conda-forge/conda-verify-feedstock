@@ -9,8 +9,8 @@ source:
   sha256: 465ff6d1c539e6d88a26b7564d2031739b98a5a0c8b50384724dcb707581f865
 
 build:
-  number: 1000
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1001
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - conda-verify = conda_verify.cli:cli
 
