@@ -9,7 +9,7 @@ source:
   sha256: 465ff6d1c539e6d88a26b7564d2031739b98a5a0c8b50384724dcb707581f865
 
 build:
-  number: 1003
+  number: 1004
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - conda-verify = conda_verify.cli:cli
@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://github.com/conda/conda-verify
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: tool for validating conda recipes and conda packages
 
