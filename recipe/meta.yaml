@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://github.com/conda/conda-verify
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: tool for validating conda recipes and conda packages
 
