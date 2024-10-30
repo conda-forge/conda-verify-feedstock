@@ -10,26 +10,24 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
   entry_points:
     - conda-verify = conda_verify.cli:cli
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.9,<3.12
     - pip
     - setuptools
   run:
-    - python
+    - python >=3.9,<3.12
     - six
-    - jinja2
-    - click
-    - pyyaml
-    - backports.functools_lru_cache  # [py<33]
-    - future
+    - jinja2 >=2.9
+    - click >=6.7
+    - pyyaml >=3.12
+    # - backports.functools_lru_cache  # [py<33]
+    - future >=0.12.0
     - tqdm
     - conda-package-handling
 
