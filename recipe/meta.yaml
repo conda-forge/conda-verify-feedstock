@@ -9,7 +9,7 @@ source:
   sha256: d4b35ffedba9874a891982e37146a626126e61da23565977ce68170dcdf5908c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
   entry_points:
@@ -17,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9,<3.12
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.9,<3.12
+    - python >={{ python_min }},<3.12
     - six
     - jinja2 >=2.9
     - click >=6.7
@@ -32,6 +32,8 @@ requirements:
     - conda-package-handling
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - conda_verify
   commands:
